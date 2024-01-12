@@ -38,7 +38,7 @@
             bindings = <
 &kp EQUAL  &kp N1      &kp N2      &kp N3      &kp N4           &kp N5  &tog 3                                                                   &tog 4              &kp N6  &kp N7  &kp N8     &kp N9      &kp N0         &kp MINUS
 &kp TAB    &kp Q       &kp W       &kp F       &kp P            &kp B   &none                                                                    &none               &kp J   &kp L   &kp U      &kp Y       &kp SEMICOLON  &kp BSLH
-&lt 2 ESC  &kp A       &hm LALT R  &hm LGUI S  &kp T            &kp G   &none      &kp LCTRL      &kp LALT                &kp LGUI   &kp RCTRL   &kp LA(LC(LSHIFT))  &kp M   &kp N   &kp E      &hm LALT I  &kp O          &lt 2 SQT
+&lt 1 ESC  &kp A       &hm LALT R  &hm LGUI S  &kp T            &kp G   &none      &kp LCTRL      &kp LALT                &kp LGUI   &kp RCTRL   &kp LA(LC(LSHIFT))  &kp M   &kp N   &kp E      &hm LALT I  &kp O          &lt 2 SQT
 &sk LSHFT  &kp Z       &kp X       &kp C       &kp D            &kp V   &none      &none          &kp HOME  &none  &none  &kp PG_UP  &none       &none               &kp K   &kp H   &kp COMMA  &kp DOT     &kp FSLH       &sk RSHFT
 &td0       &caps_word  &kp GRAVE   &kp LEFT    &kp RIGHT_ARROW          &kp SPACE  &kp BACKSPACE  &kp END                 &kp PG_DN  &kp DELETE  &kp ENTER                   &kp UP  &kp DOWN   &kp LBKT    &kp RBKT       &tog 5
             >;
@@ -56,11 +56,11 @@
 
         layer_symbols {
             bindings = <
-&trans  &kp F1      &kp F2  &kp F3                &kp F4                 &kp F5     &trans                                                  &trans  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
-&trans  &kp SYSREQ  &trans  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans     &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans   &trans
-&trans  &trans      &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp GRAVE  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans
-&trans  &trans      &trans  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp TILDE  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans
-&trans  &trans      &trans  &trans                &trans                            &trans  &trans  &trans                  &trans  &trans  &trans          &trans  &trans  &trans  &trans   &trans
+&trans  &kp F1      &kp F2   &kp F3                &kp F4                 &kp F5     &trans                                                  &trans  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
+&trans  &kp SYSREQ  &trans   &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans     &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans   &trans
+&trans  &kp F11     &kp F12  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp GRAVE  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans
+&trans  &trans      &trans   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp TILDE  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans
+&trans  &trans      &trans   &trans                &trans                            &trans  &trans  &trans                  &trans  &trans  &trans          &trans  &trans  &trans  &trans   &trans
             >;
         };
 
