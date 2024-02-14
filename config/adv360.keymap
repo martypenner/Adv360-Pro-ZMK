@@ -6,6 +6,12 @@
 
 &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>; };
 
+&sk {
+    release-after-ms = <500>;
+    quick-release;
+    /delete-property/ ignore-modifiers;
+};
+
 / {
     behaviors {
         #include "macros.dtsi"
