@@ -37,11 +37,11 @@
     };
 
     macros {
-        arrow_fn: fat_arrow {
+        arrow_fn: arrow_fn {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp SPACE &kp EQUAL &kp GREATER_THAN &kp SPACE &kp LEFT_BRACE &kp RIGHT_BRACE>;
-            label = "FAT_ARROW";
+            label = "ARROW_FN";
         };
 
         fat_arrow: fat_arrow {
