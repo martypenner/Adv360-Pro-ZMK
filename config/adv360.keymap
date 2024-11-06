@@ -7,33 +7,33 @@
 &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>; };
 
 &sk {
-    release-after-ms = <500>;
-    quick-release;
+  release-after-ms = <500>;
+  quick-release;
 
-    /delete-property/ ignore-modifiers;
+  /delete-property/ ignore-modifiers;
 };
 
 / {
     behaviors {
-        #include "macros.dtsi"
+      #include "macros.dtsi"
 
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <175>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
+      hm: homerow_mods {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS";
+          #binding-cells = <2>;
+          tapping-term-ms = <200>;
+          quick_tap_ms = <175>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&kp>;
+      };
 
-        altF4: alt_f4 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ALT_F4";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp LA(F4)>;
-        };
+      altF4: alt_f4 {
+          compatible = "zmk,behavior-tap-dance";
+          label = "ALT_F4";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;
+          bindings = <&kp LEFT_PARENTHESIS>, <&kp LA(F4)>;
+      };
     };
 
     macros {
@@ -52,57 +52,57 @@
         };
     };
 
-    keymap {
-        compatible = "zmk,keymap";
+  keymap {
+    compatible = "zmk,keymap";
 
-        default_layer {
-            bindings = <
-&kp EQUAL       &kp N1      &kp N2      &kp N3      &kp N4           &kp N5  &tog 2                                                                                    &tog 3              &kp N6  &kp N7  &kp N8     &kp N9      &kp N0         &kp MINUS
-&kp TAB         &kp Q       &kp W       &kp F       &kp P            &kp B   &none                                                                                     &none               &kp J   &kp L   &kp U      &kp Y       &kp SEMICOLON  &kp BSLH
-&lt 1 ESC       &kp A       &hm LALT R  &hm LGUI S  &kp T            &kp G   &kp LC(LA(LG(LEFT_SHIFT)))  &kp LCTRL      &kp LALT                &kp LGUI   &kp RCTRL   &kp LC(LA(LSHIFT))  &kp M   &kp N   &kp E      &hm LALT I  &kp O          &lt 1 SQT
-&sk LEFT_SHIFT  &kp Z       &kp X       &kp C       &kp D            &kp V   &none                       &none          &kp HOME  &none  &none  &kp PG_UP  &none       &none               &kp K   &kp H   &kp COMMA  &kp DOT     &kp FSLH       &sk RIGHT_SHIFT
-&altF4          &caps_word  &kp GRAVE   &kp LEFT    &kp RIGHT_ARROW          &kp SPACE                   &kp BACKSPACE  &kp END                 &kp PG_DN  &kp DELETE  &kp ENTER                   &kp UP  &kp DOWN   &kp LBKT    &kp RBKT       &tog 4
-            >;
-        };
-
-        layer_symbols {
-            bindings = <
-&trans  &kp F1         &kp F2            &kp F3                &kp F4                 &kp F5     &trans                                                  &trans  &kp F6  &kp F7     &kp F8      &kp F9      &kp F10  &trans
-&trans  &kp EQUAL      &kp GREATER_THAN  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans     &trans                                                  &trans  &trans  &trans     &trans      &trans      &trans   &trans
-&trans  &kp SEMICOLON  &kp COLON         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp GRAVE  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &arrow_fn  &fat_arrow  &none       &trans   &trans
-&trans  &trans         &trans            &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp TILDE  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp F11    &kp F12     &kp SYSREQ  &trans   &trans
-&trans  &trans         &trans            &trans                &trans                            &trans  &trans  &trans                  &trans  &trans  &trans          &trans     &trans      &trans      &trans   &trans
-            >;
-        };
-
-        layer_gaming {
-            bindings = <
-&trans     &trans    &trans  &trans    &trans     &trans  &trans                                                              &trans     &trans  &trans  &trans    &trans  &trans         &trans
-&kp TAB    &kp Q     &kp W   &kp E     &kp R      &kp T   &none                                                               &none      &kp Y   &kp U   &kp I     &kp O   &kp P          &trans
-&kp ESC    &kp A     &kp S   &kp D     &kp F      &kp G   &none      &kp LCTRL  &kp LALT                &kp LGUI   &kp RCTRL  &none      &kp H   &kp J   &kp K     &kp L   &kp SEMICOLON  &trans
-&kp LSHFT  &kp Z     &kp X   &kp C     &kp V      &kp B   &none      &none      &kp HOME  &none  &none  &kp PG_UP  &none      &none      &kp N   &kp M   &trans    &trans  &trans         &kp RSHFT
-&trans     &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT          &kp SPACE  &kp BSPC   &kp END                 &kp PG_DN  &kp DEL    &kp ENTER          &kp UP  &kp DOWN  &trans  &trans         &trans
-            >;
-        };
-
-        layer_audio {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans        &trans        &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans        &trans        &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &kp C_VOL_UP  &kp C_VOL_DN  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans                  &trans  &trans  &trans          &trans        &trans        &trans  &trans  &trans
-            >;
-        };
-
-        layer_mod {
-            bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                                                            &trans                  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
-&none  &none         &none         &none         &none         &none         &bootloader                                                                      &bootloader             &none         &none         &none         &none         &none         &none
-&none  &none         &none         &none         &none         &none         &rgb_ug RGB_MEFS_CMD 5  &bt BT_CLR  &none                &bt BT_CLR  &bt BT_CLR  &rgb_ug RGB_MEFS_CMD 5  &none         &none         &none         &none         &none         &none
-&none  &none         &none         &none         &none         &none         &none                   &none       &none  &none  &none  &none       &none       &none                   &none         &none         &none         &none         &none         &none
-&none  &none         &none         &bl BL_INC    &bl BL_DEC                  &rgb_ug RGB_TOG         &bl BL_TOG  &none                &none       &bl BL_TOG  &rgb_ug RGB_TOG                       &bl BL_INC    &bl BL_DEC    &none         &none         &to 0
-            >;
-        };
+    default_layer {
+      bindings = <
+        &kp EQUAL       &kp N1      &kp N2      &kp N3      &kp N4           &kp N5  &tog 2                                                                                    &tog 3              &kp N6  &kp N7  &kp N8     &kp N9      &kp N0         &kp MINUS
+        &kp TAB         &kp Q       &kp W       &kp F       &kp P            &kp B   &none                                                                                     &none               &kp J   &kp L   &kp U      &kp Y       &kp SEMICOLON  &kp BSLH
+        &lt 1 ESC       &kp A       &hm LALT R  &hm LGUI S  &kp T            &kp G   &kp LC(LA(LG(LEFT_SHIFT)))  &kp LCTRL      &kp LALT                &kp LGUI   &kp RCTRL   &kp LC(LA(LSHIFT))  &kp M   &kp N   &kp E      &hm LALT I  &kp O          &lt 1 SQT
+        &sk LEFT_SHIFT  &kp Z       &kp X       &kp C       &kp D            &kp V   &none                       &none          &kp HOME  &none  &none  &kp PG_UP  &none       &none               &kp K   &kp H   &kp COMMA  &kp DOT     &kp FSLH       &sk RIGHT_SHIFT
+        &altF4          &caps_word  &kp GRAVE   &kp LEFT    &kp RIGHT_ARROW          &kp SPACE                   &kp BACKSPACE  &kp END                 &kp PG_DN  &kp DELETE  &kp ENTER                   &kp UP  &kp DOWN   &kp LBKT    &kp RBKT       &tog 4
+      >;
     };
+
+    layer_symbols {
+      bindings = <
+        &trans  &kp F1         &kp F2            &kp F3                &kp F4                 &kp F5     &trans                                                  &trans  &kp F6  &kp F7     &kp F8      &kp F9      &kp F10  &trans
+        &trans  &kp EQUAL      &kp GREATER_THAN  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans     &trans                                                  &trans  &trans  &trans     &trans      &trans      &trans   &trans
+        &trans  &kp SEMICOLON  &kp COLON         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp GRAVE  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &arrow_fn  &fat_arrow  &none       &trans   &trans
+        &trans  &trans         &trans            &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp TILDE  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp F11    &kp F12     &kp SYSREQ  &trans   &trans
+        &trans  &trans         &trans            &trans                &trans                            &trans  &trans  &trans                  &trans  &trans  &trans          &trans     &trans      &trans      &trans   &trans
+      >;
+    };
+
+    layer_gaming {
+      bindings = <
+        &trans     &trans    &trans  &trans    &trans     &trans  &trans                                                              &trans     &trans  &trans  &trans    &trans  &trans         &trans
+        &kp TAB    &kp Q     &kp W   &kp E     &kp R      &kp T   &none                                                               &none      &kp Y   &kp U   &kp I     &kp O   &kp P          &trans
+        &kp ESC    &kp A     &kp S   &kp D     &kp F      &kp G   &none      &kp LCTRL  &kp LALT                &kp LGUI   &kp RCTRL  &none      &kp H   &kp J   &kp K     &kp L   &kp SEMICOLON  &trans
+        &kp LSHFT  &kp Z     &kp X   &kp C     &kp V      &kp B   &none      &none      &kp HOME  &none  &none  &kp PG_UP  &none      &none      &kp N   &kp M   &trans    &trans  &trans         &kp RSHFT
+        &trans     &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT          &kp SPACE  &kp BSPC   &kp END                 &kp PG_DN  &kp DEL    &kp ENTER          &kp UP  &kp DOWN  &trans  &trans         &trans
+      >;
+    };
+
+    layer_audio {
+      bindings = <
+        &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans        &trans        &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                  &trans  &trans  &trans        &trans        &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &kp C_VOL_UP  &kp C_VOL_DN  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans        &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans                  &trans  &trans  &trans          &trans        &trans        &trans  &trans  &trans
+        >;
+    };
+
+    layer_mod {
+      bindings = <
+        &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                                                            &trans                  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
+        &none  &none         &none         &none         &none         &none         &bootloader                                                                      &bootloader             &none         &none         &none         &none         &none         &none
+        &none  &none         &none         &none         &none         &none         &rgb_ug RGB_MEFS_CMD 5  &bt BT_CLR  &none                &bt BT_CLR  &bt BT_CLR  &rgb_ug RGB_MEFS_CMD 5  &none         &none         &none         &none         &none         &none
+        &none  &none         &none         &none         &none         &none         &none                   &none       &none  &none  &none  &none       &none       &none                   &none         &none         &none         &none         &none         &none
+        &none  &none         &none         &bl BL_INC    &bl BL_DEC                  &rgb_ug RGB_TOG         &bl BL_TOG  &none                &none       &bl BL_TOG  &rgb_ug RGB_TOG                       &bl BL_INC    &bl BL_DEC    &none         &none         &to 0
+      >;
+    };
+  };
 };
