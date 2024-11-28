@@ -51,7 +51,7 @@
         arrow_fn: arrow_fn {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LPAR &kp RPAR &kp SPACE &kp EQUAL &kp GT &kp SPACE &kp RBKT &kp RBRC>;
+            bindings = <&kp LPAR &kp RPAR &kp SPACE &kp EQUAL &kp GT &kp SPACE &kp LEFT_BRACE &kp RIGHT_BRACE>;
             label = "ARROW_FN";
             wait-ms = <5>;
             tap-ms = <5>;
