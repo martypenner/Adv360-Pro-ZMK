@@ -77,6 +77,16 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        command {
+            bindings = <&none>;
+            key-positions = <65 66>;
+            layers = <0 2>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
