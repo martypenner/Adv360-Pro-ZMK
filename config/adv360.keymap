@@ -106,7 +106,7 @@
 &trans  &kp EQUAL      &kp GREATER_THAN  &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans     &trans                                      &trans  &trans  &kp PLUS              &kp MINUS              &trans     &kp EQUAL      &trans
 &trans  &kp SEMICOLON  &kp COLON         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp GRAVE  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp COLON  &kp SEMICOLON  &trans
 &trans  &kp PLUS       &kp MINUS         &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp TILDE                  &trans      &trans                  &trans  &arrow_fn             &fat_arrow             &trans     &trans         &trans
-&trans  &kp F11        &kp F12           &kp SYSREQ            &trans                            &trans  &trans  &trans      &trans  &trans  &trans          &trans                &trans                 &trans     &trans         &trans
+&trans  &kp F11        &kp F12           &kp SYSREQ            &kp PAUSE_BREAK                   &trans  &trans  &trans      &trans  &trans  &trans          &trans                &trans                 &trans     &trans         &trans
             >;
         };
 
